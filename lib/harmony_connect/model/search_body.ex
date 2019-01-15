@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the module manually.
 
-defmodule HarmonyConnect.Model.ExternalIds do
+defmodule HarmonyConnect.Model.SearchBody do
   @moduledoc """
   The external IDs of the chains or entries you want to retrieve. You must enter these External IDs in Base64 format.
   """
@@ -17,7 +17,7 @@ defmodule HarmonyConnect.Model.ExternalIds do
   }
 end
 
-defimpl Poison.Decoder, for: HarmonyConnect.Model.ExternalIds do
+defimpl Poison.Decoder, for: HarmonyConnect.Model.SearchBody do
   def decode(value, _options) do
     value
   end

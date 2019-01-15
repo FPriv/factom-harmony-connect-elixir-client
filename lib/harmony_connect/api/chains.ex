@@ -99,7 +99,7 @@ defmodule HarmonyConnect.Api.Chains do
   ## Parameters
 
   - connection (HarmonyConnect.Connection): Connection to server
-  - external_ids (ExternalIds): 
+  - search_body (SearchBody): 
   - opts (KeywordList): [optional] Optional parameters
     - :limit (integer()): The number of items you would like back in each page.
     - :offset (integer()): The page you would like to request. The first page offset is Zero.
@@ -108,8 +108,8 @@ defmodule HarmonyConnect.Api.Chains do
   {:ok, %HarmonyConnect.Model.ChainList{}} on success
   {:error, info} on failure
   """
-  @spec post_chain_search(Tesla.Env.client, HarmonyConnect.Model.ExternalIds.t, keyword()) :: {:ok, HarmonyConnect.Model.ChainList.t} | {:error, Tesla.Env.t}
-  def post_chain_search(connection, external_ids, opts \\ []) do
+  @spec post_chain_search(Tesla.Env.client, HarmonyConnect.Model.SearchBody.t, keyword()) :: {:ok, HarmonyConnect.Model.ChainList.t} | {:error, Tesla.Env.t}
+  def post_chain_search(connection, search_body, opts \\ []) do
     optional_params = %{
       :limit => :query,
       :offset => :query
@@ -117,7 +117,7 @@ defmodule HarmonyConnect.Api.Chains do
     %{}
     |> method(:post)
     |> url("/chains/search")
-    |> add_param(:body, :body, external_ids)
+    |> add_param(:body, :body, search_body)
     |> add_optional_params(optional_params, opts)
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()

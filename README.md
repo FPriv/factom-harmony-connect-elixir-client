@@ -6,11 +6,12 @@ Connect is the fastest way to add blockchain capabilities to your app without cr
 
 ## Installation
 
-The package can be installed by adding `harmony_connect_client` to your list of dependencies in `mix.exs`:
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+by adding `harmony_connect` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:harmony_connect_client, "~> 0.1.0"}]
+  [{:harmony_connect, "~> 0.1.0"}]
 end
 ```
 
@@ -29,12 +30,12 @@ Authentication for Harmony Connect is handled using API Keys. You can set these 
 
 Example
 ```elixir
-conn = new Tesla.Env.client(app_id, app_key)
+conn = HarmonyConnect.Connection.new(app_id, app_key)
 ```
 
 You can also change the Base URL here if you need to use a different level of Connect (Switching from the Sandbox to the Live version of Harmony for example).
 ```elixir
-conn = new Tesla.Env.client(alternate_url, app_id, app_key)
+conn = HarmonyConnect.Connection.new(alternate_url, app_id, app_key)
 ```
 
 ## Support
@@ -43,3 +44,4 @@ For more information, you can view the Connect documentation at [https://docs.ha
 
 
 For additional support, contact us at harmony-support@factom.com
+

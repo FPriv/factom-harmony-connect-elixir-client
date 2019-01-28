@@ -17,9 +17,9 @@ defmodule HarmonyConnect.Model.ChainList do
 
   @type t :: %__MODULE__{
     data: [ChainListData],
-    offset: String.t,
-    limit: String.t,
-    count: String.t
+    offset: integer(),
+    limit: integer(),
+    count: integer()
   }
 end
 

@@ -17,9 +17,9 @@ defmodule HarmonyConnect.Model.EntrySearchResponse do
 
   @type t :: %__MODULE__{
     data: [EntrySearchResponseData],
-    offset: String.t,
-    limit: String.t,
-    count: String.t
+    offset: integer(),
+    limit: integer(),
+    count: integer()
   }
 end
 

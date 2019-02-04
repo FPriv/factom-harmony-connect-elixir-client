@@ -6,12 +6,11 @@ Connect is the fastest way to add blockchain capabilities to your app without cr
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `harmony_connect` to your list of dependencies in `mix.exs`:
+This package can be installed by adding `harmony_connect_client` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:harmony_connect, "~> 0.1.0"}]
+  [{:harmony_connect_client, "~> 0.1.0"}]
 end
 ```
 

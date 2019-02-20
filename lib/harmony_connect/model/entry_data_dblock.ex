@@ -2,24 +2,26 @@
 # https://openapi-generator.tech
 # Do not edit the module manually.
 
-defmodule HarmonyConnect.Model.EntryDataEblock do
+defmodule HarmonyConnect.Model.EntryDataDblock do
   @moduledoc """
-  Represents the Entry Block that contains the entry. This will be null if the entry is not at least at the &#x60;factom&#x60; immutability stage.
+  Represents the Directory Block that relates to this entry. This will be null if the chain is not at least at the &#x60;factom&#x60; immutability stage.
   """
 
   @derive [Poison.Encoder]
   defstruct [
     :keymr,
+    :height,
     :href
   ]
 
   @type t :: %__MODULE__{
     keymr: String.t | nil,
+    height: integer() | nil,
     href: String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: HarmonyConnect.Model.EntryDataEblock do
+defimpl Poison.Decoder, for: HarmonyConnect.Model.EntryDataDblock do
   def decode(value, _options) do
     value
   end

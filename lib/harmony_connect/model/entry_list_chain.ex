@@ -2,30 +2,24 @@
 # https://openapi-generator.tech
 # Do not edit the module manually.
 
-defmodule HarmonyConnect.Model.ChainListData do
+defmodule HarmonyConnect.Model.EntryListChain do
   @moduledoc """
-  
+  An object that contains the Chain Hash (ID) as well as a URL for the chain.
   """
 
   @derive [Poison.Encoder]
   defstruct [
     :chain_id,
-    :external_ids,
-    :href,
-    :stage,
-    :created_at
+    :href
   ]
 
   @type t :: %__MODULE__{
-    chain_id: String.t,
-    external_ids: [String.t],
-    href: String.t,
-    stage: String.t,
-    created_at: String.t
+    chain_id: String.t | nil,
+    href: String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: HarmonyConnect.Model.ChainListData do
+defimpl Poison.Decoder, for: HarmonyConnect.Model.EntryListChain do
   def decode(value, _options) do
     value
   end

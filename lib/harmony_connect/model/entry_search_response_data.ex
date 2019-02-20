@@ -11,12 +11,14 @@ defmodule HarmonyConnect.Model.EntrySearchResponseData do
   defstruct [
     :entry_hash,
     :external_ids,
+    :stage,
     :href
   ]
 
   @type t :: %__MODULE__{
     entry_hash: String.t,
     external_ids: [String.t],
+    stage: String.t,
     href: String.t
   }
 end

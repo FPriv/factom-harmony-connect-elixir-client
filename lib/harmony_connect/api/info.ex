@@ -24,8 +24,8 @@ defmodule HarmonyConnect.Api.Info do
   {:ok, %HarmonyConnect.Model.AllInfo{}} on success
   {:error, info} on failure
   """
-  @spec get_all_info(Tesla.Env.client, keyword()) :: {:ok, HarmonyConnect.Model.AllInfo.t} | {:error, Tesla.Env.t}
-  def get_all_info(connection, _opts \\ []) do
+  @spec get_api_info(Tesla.Env.client, keyword()) :: {:ok, HarmonyConnect.Model.AllInfo.t} | {:error, Tesla.Env.t}
+  def get_api_info(connection, _opts \\ []) do
     %{}
     |> method(:get)
     |> url("/")

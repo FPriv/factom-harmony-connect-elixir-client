@@ -17,8 +17,8 @@ defmodule HarmonyConnect.Model.EntryListData do
 
   @type t :: %__MODULE__{
     entry_hash: String.t,
-    chain: EntryLinkChain,
-    created_at: String.t,
+    chain: EntryListChain,
+    created_at: String.t | nil,
     href: String.t
   }
 end
@@ -27,7 +27,7 @@ defimpl Poison.Decoder, for: HarmonyConnect.Model.EntryListData do
   import HarmonyConnect.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:chain, :struct, HarmonyConnect.Model.EntryLinkChain, options)
+    |> deserialize(:chain, :struct, HarmonyConnect.Model.EntryListChain, options)
   end
 end
 

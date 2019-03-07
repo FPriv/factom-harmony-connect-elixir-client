@@ -11,13 +11,17 @@ defmodule HarmonyConnect.Model.ChainListData do
   defstruct [
     :chain_id,
     :external_ids,
-    :href
+    :href,
+    :stage,
+    :created_at
   ]
 
   @type t :: %__MODULE__{
     chain_id: String.t,
     external_ids: [String.t],
-    href: String.t
+    href: String.t,
+    stage: String.t,
+    created_at: String.t | nil
   }
 end
 

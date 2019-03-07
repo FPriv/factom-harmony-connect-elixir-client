@@ -15,16 +15,18 @@ defmodule HarmonyConnect.Model.EntryData do
     :external_ids,
     :content,
     :stage,
+    :dblock,
     :eblock
   ]
 
   @type t :: %__MODULE__{
-    entry_hash: String.t | nil,
-    chain: EntryLinkChain | nil,
+    entry_hash: String.t,
+    chain: EntryListChain,
     created_at: String.t | nil,
-    external_ids: [String.t] | nil,
-    content: String.t | nil,
-    stage: String.t | nil,
+    external_ids: [String.t],
+    content: String.t,
+    stage: String.t,
+    dblock: EntryDataDblock | nil,
     eblock: EntryDataEblock | nil
   }
 end
@@ -33,7 +35,8 @@ defimpl Poison.Decoder, for: HarmonyConnect.Model.EntryData do
   import HarmonyConnect.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:chain, :struct, HarmonyConnect.Model.EntryLinkChain, options)
+    |> deserialize(:chain, :struct, HarmonyConnect.Model.EntryListChain, options)
+    |> deserialize(:dblock, :struct, HarmonyConnect.Model.EntryDataDblock, options)
     |> deserialize(:eblock, :struct, HarmonyConnect.Model.EntryDataEblock, options)
   end
 end

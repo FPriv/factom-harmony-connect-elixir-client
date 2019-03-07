@@ -18,7 +18,7 @@ defmodule HarmonyConnect.Model.EntryListData do
   @type t :: %__MODULE__{
     entry_hash: String.t,
     chain: EntryListChain,
-    created_at: String.t,
+    created_at: String.t | nil,
     href: String.t
   }
 end

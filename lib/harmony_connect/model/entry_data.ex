@@ -22,12 +22,12 @@ defmodule HarmonyConnect.Model.EntryData do
   @type t :: %__MODULE__{
     entry_hash: String.t,
     chain: EntryListChain,
-    created_at: String.t,
+    created_at: String.t | nil,
     external_ids: [String.t],
     content: String.t,
     stage: String.t,
-    dblock: EntryDataDblock,
-    eblock: EntryDataEblock
+    dblock: EntryDataDblock | nil,
+    eblock: EntryDataEblock | nil
   }
 end
 

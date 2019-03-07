@@ -25,9 +25,9 @@ defmodule HarmonyConnect.Model.ChainData do
     external_ids: [String.t],
     stage: String.t,
     entries: ChainDataEntries,
-    eblock: ChainDataEblock,
-    dblock: ChainDataDblock,
-    created_at: String.t
+    eblock: ChainDataEblock | nil,
+    dblock: ChainDataDblock | nil,
+    created_at: String.t | nil
   }
 end
 

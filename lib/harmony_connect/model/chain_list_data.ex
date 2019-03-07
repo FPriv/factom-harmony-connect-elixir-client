@@ -21,7 +21,7 @@ defmodule HarmonyConnect.Model.ChainListData do
     external_ids: [String.t],
     href: String.t,
     stage: String.t,
-    created_at: String.t
+    created_at: String.t | nil
   }
 end
 
